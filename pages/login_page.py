@@ -19,10 +19,10 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), 'Not found register form'
 
     def register_new_user(self, email, password):
-        email_input = self.browser.find_element(*LoginPageLocators.EMAIL_SING_UP)
+        email_input = self.browser.find_element(*LoginPageLocators.EMAIL)
         email_input.send_keys(email)
-        pas_input_1 = self.browser.find_element(*LoginPageLocators.PASS_SING_UP_1)
+        pas_input_1 = self.browser.find_element(*LoginPageLocators.PASSWORD)
         pas_input_1.send_keys(password)
-        pas_input_2 = self.browser.find_element(*LoginPageLocators.PASS_SING_UP_2)
+        pas_input_2 = self.browser.find_element(*LoginPageLocators.CONFIRM_PASSWORD)
         pas_input_2.send_keys(password)
-        self.browser.find_element(*LoginPageLocators.BTN_SING_UP).click()
+        self.browser.find_element(*LoginPageLocators.REG_BTN).click()
